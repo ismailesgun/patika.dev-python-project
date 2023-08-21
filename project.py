@@ -7,14 +7,11 @@ def flatten(arr):
     """
     flattened_list = []
     for l in arr:
-        print(f"listenin şu an dönen elemanı: {l}")
         if isinstance(l,list) :
-            flattened_list.extend(flatten(l))
+            flattened_list.extend(flatten(l))  # if the current element is a nested list
         else:
             flattened_list.append(l)
             
-        
-        print(f"Listenin şu ana kadar düzleşmiş hali: {flattened_list}")
     return flattened_list
 
 def reverse(arr):
@@ -24,9 +21,9 @@ def reverse(arr):
     
     This function reverses both the list and lists in the list
     """
-    arr.sort(reverse=True)
+    arr.sort(reverse=True) # Reverse the array
     for i in arr:
-        if isinstance(i,list):
+        if isinstance(i,list): # if the array has lists , it reverses the lists, too
             i.sort(reverse=True)    
     return arr
 arr =  [[1, 2], [3, 4], [5, 6, 7]]
